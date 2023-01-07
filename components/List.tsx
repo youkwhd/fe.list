@@ -20,15 +20,15 @@ const List = ({ children }: ListT): JSX.Element => {
 const Item = ({ title, date, color, tags }: ItemT): JSX.Element => {
     return (
         <>
-        <li style={{listStyle: "none", display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20}}>
-            <div style={{display: "flex", alignItems: "center"}}>
-                <div style={{width: 15, height: 15, borderRadius: 2, backgroundColor: color, marginRight: 10}} />
-                <p>{title}</p>
-            </div>
-            <div>
-                {tags.map((tag) => <span style={{fontSize: 10, marginRight: 15, border: "1px solid", borderRadius: 6, padding: 5}}>#{tag.toUpperCase()}</span>)}
-            </div>
-        </li>
+            <li style={{listStyle: "none", display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20}}>
+                <div style={{display: "flex", alignItems: "center"}}>
+                    <div style={{width: 15, height: 15, borderRadius: 2, backgroundColor: color, marginRight: 10}} />
+                    <p>{title}</p>
+                </div>
+                <div>
+                    {tags.map((tag) => <span style={{fontSize: 10, marginRight: 8, border: "1px solid", borderRadius: 10, padding: 5}}>#{tag.toUpperCase()}</span>)}
+                </div>
+            </li>
         </>
     )
 }
