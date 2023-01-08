@@ -5,8 +5,8 @@ const Home = (): JSX.Element => {
     return (
         <>
             <h1>React List Animation</h1>
-            <p></p>
             <br />
+
             <List>
                 <Item 
                     title={"Developing Web Apps — Racket"}
