@@ -1,10 +1,35 @@
 /* TODO: integrate */
 .List li {
+    /* position: absolute; */
     position: relative;
     top: 0;
     transition: top ease 0.4s;
 }
 
+.List li:nth-child(1) {
+    transform: translateY(5px);
+}
+
+.List li:nth-child(2) {
+    transform: translateY(-25px);
+}
+
+.List li:nth-child(3) {
+    transform: translateY(-55px);
+}
+
+.List li:nth-child(4) {
+    transform: translateY(-85px);
+}
+
+.List li:nth-child(5) {
+    transform: translateY(-115px);
+}
+
+.List li:nth-child(6) {
+    transform: translateY(-145px);
+}
+
 .List li:hover {
-    top: -20px;
+    top: -25px;
 }

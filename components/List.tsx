@@ -6,7 +6,7 @@ type ListT = {
 
 type ItemT = {
     title: string
-    date?: Date
+    date: Date
     color: string
     tags: string[]
     _idx?: number
@@ -26,15 +26,20 @@ const List = ({ children }: ListT): JSX.Element => {
 }
 
 const Item = ({ title, date, color, tags, _idx }: ItemT): JSX.Element => {
+    console.log()
     return (
         <>
-            <li style={{borderTop: "1px solid black", backgroundColor: "white", listStyle: "none", display: "flex", alignItems: "center", justifyContent: "space-between", paddingBottom: 10, paddingTop: 10}}>
-                <div style={{display: "flex", alignItems: "center"}}>
-                    <span style={{marginRight: 10}}>0{_idx}</span>
-                    <div style={{width: 15, height: 15, borderRadius: 2, backgroundColor: color, marginRight: 10}} />
-                    <p style={{margin: 0}}>{title}</p>
+            <li style={{cursor: "pointer", borderTop: "1px solid black", backgroundColor: "white", listStyle: "none", display: "flex", justifyContent: "space-between", paddingBottom: 10, paddingTop: 10}}>
+                <div style={{alignItems: "center"}}>
+                    <div style={{display: "flex"}}>
+                        <span style={{marginRight: 10}}>0{_idx}</span>
+                        <div style={{width: 15, height: 15, borderRadius: 2, backgroundColor: color, marginRight: 10}} />
+                        <p style={{margin: 0}}>{title}</p>
+                    </div>
+                    <br />
+                    <span>— {date.toLocaleString("default", {month: "long"})} '{date.getDate()}</span>
                 </div>
-                <div>
+                <div style={{position: "relative"}}>
                     {tags.map((tag) => <span style={{cursor: "pointer", fontSize: 10, marginRight: 8, border: "1px solid", borderRadius: 10, padding: 5}}>#{tag.toUpperCase()}</span>)}
                 </div>
             </li>
