@@ -1,0 +1,10 @@
+/* TODO: integrate */
+.List li {
+    position: relative;
+    top: 0;
+    transition: top ease 0.4s;
+}
+
+.List li:hover {
+    top: -20px;
+}
