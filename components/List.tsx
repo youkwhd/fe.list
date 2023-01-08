@@ -1,4 +1,5 @@
 import { Children, cloneElement, ReactElement } from "react"
+import trailZero from "../lib/trailZero"
 
 type ListT = {
     children: JSX.Element | JSX.Element[]
@@ -34,11 +35,15 @@ const ItemCloser = (): JSX.Element => {
 }
 
 const Item = ({ title, date, color, tags, _idx }: ItemT): JSX.Element => {
+    if (_idx == null || _idx == undefined) {
+        throw new Error("_idx was not found")
+    }
+
     return (
         <li style={{position: "relative", transition: "top ease 0.4s",cursor: "pointer", borderTop: "1px solid black", backgroundColor: "white", listStyle: "none"}}>
             <div style={{display: "flex", height: "100%", alignItems: "center", width: "100%", justifyContent: "space-between", paddingBottom: 10, paddingTop: 10}}>
                 <div style={{display: "flex", width: "50%"}}>
-                    <span style={{marginRight: 10}}>0{_idx}</span>
+                    <span style={{marginRight: 10}}>{trailZero(_idx, 2)}</span>
                     <div style={{width: 15, height: 15, borderRadius: 2, backgroundColor: color, marginRight: 10}} />
                     <p style={{margin: 0}}>{title}</p>
                 </div>
