@@ -1,19 +1,21 @@
 import { List, Item } from "../components/List"
+import Link from "next/link"
 
 const Home = (): JSX.Element => {
     return (
         <>
-            <h1>Emmet Abbreviation</h1>
-
+            <h1>React List Animation</h1>
+            <p></p>
+            <br />
             <List>
                 <Item 
-                    title={"TMDb API Wrapper — C99"}
+                    title={"Developing Web Apps — Racket"}
                     date={new Date("2022-03-25")}
                     color={"#67B6AB"}
                     tags={["Web Dev", "Backend"]}
                     />
                 <Item 
-                    title={"Big O Notation Conference — Bandung, Indonesia"} 
+                    title={"Monad Conference — Bandung, Indonesia"} 
                     date={new Date("2023-01-21")}
                     color={"#0976B4"}
                     tags={["Algorithm", "Competitive Programming"]}
@@ -27,7 +29,7 @@ const Home = (): JSX.Element => {
                 <Item 
                     title={"Linux with Rust kernels — Linus Torvalds"} 
                     date={new Date("2024-04-06")}
-                    color={"#FFFFCC"}
+                    color={"#DFC800"}
                     tags={["OS", "Hardware"]}
                     />
                 <Item 
@@ -37,6 +39,11 @@ const Home = (): JSX.Element => {
                     tags={["Tissue"]}
                     />
             </List>
+
+            <h1>Reference</h1>
+            <ul>
+                <li>Inspired by — <Link href="https://druh.in">https://druh.in</Link></li>
+            </ul>
         </>
     )
 }
